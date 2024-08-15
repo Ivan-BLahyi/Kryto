@@ -1,2 +1,1 @@
-print("круто")
-print("go to cs")
+from random import  randint
