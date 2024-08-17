@@ -1,26 +1,25 @@
-from random import  randint
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QVBoxLayout
+from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QHBoxLayout, QVBoxLayout, QLabel,
+                             QMessageBox, QRadioButton)
 
 app = QApplication([])
 main_win = QWidget()
-main_win.setWindowTitle('Визначник переможців')
-button = QPushButton('Згенерувати')
-text = QLabel('Натисни , щоб дізнатися переможця')
-winner = QLabel('?')
+main_win.setWindowTitle('Конкурс від Chebyrec')
+question = QLabel('Коли розстріляли Адольфа')
+btn_answer1 = QRadioButton('У 2024')
+btn_answer2 = QRadioButton('У 1945')
+btn_answer3 = QRadioButton('Я не знаю')
+btn_answer4 = QRadioButton('Та він сам застрелився')
+layoutH1 = QHBoxLayout()
+layoutH2 = QHBoxLayout()
+layoutH3 = QHBoxLayout()
+layoutH1.addWidget(question, alignment = Qt.AlignCenter)
+layoutH2.addWidget(btn_answer1, alignment = Qt.AlignCenter)
+layoutH3.addWidget(btn_answer2, alignment = Qt.AlignCenter)
+layoutH3.addWidget(btn_answer4, alignment = Qt.AlignCenter)
+layout_main = QVBoxLayout()
+layout_main.addLayout(layoutH1)
+layout_main.addLayout(layoutH2)
+layout_main.addLayout(layoutH3)
+main_win.setLayout(layout_main)
 
-line = QVBoxLayout()
-line.addWidget(text, alignment= Qt.AlignCenter)
-line.addWidget(winner, alignment= Qt.AlignCenter)
-line.addWidget(button, alignment= Qt.AlignCenter)
-main_win.setLayout(line)
-
-def show_winner():
-    number = randint(0, 99)
-    winner.setText(str(number))
-    text.setText('Переможець:')
-
-button.clicked.connect(show_winner)
-
-main_win.show()
-app.exec_()
