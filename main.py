@@ -29,7 +29,7 @@ def show_win():
     victory_win.exec_()
 
 def show_lose():
-    victory_win = QMessageBox
+    victory_win = QMessageBox()
     victory_win.setText('Ні, Bи нічого не виграли')
     victory_win.exec_()
 
