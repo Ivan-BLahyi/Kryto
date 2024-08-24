@@ -23,3 +23,22 @@ layout_main.addLayout(layoutH2)
 layout_main.addLayout(layoutH3)
 main_win.setLayout(layout_main)
 
+def show_win():
+    victory_win = QMessageBox()
+    victory_win.setText('Правильно! Bи виграли атомну бомбу')
+    victory_win.exec_()
+
+def show_lose():
+    victory_win = QMessageBox
+    victory_win.setText('Ні, Bи нічого не виграли')
+    victory_win.exec_()
+
+btn_answer4.clicked.connect(show_win)
+btn_answer1.clicked.connect(show_lose)
+btn_answer2.clicked.connect(show_lose)
+btn_answer3.clicked.connect(show_lose)
+main_win.show()
+app.exec_()
+
+
+
