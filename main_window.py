@@ -61,6 +61,11 @@ question = QLabel("Питання???")
 
 main_layout = QVBoxLayout()
 main_layout.addWidget(header)
+main_layout.addWidget(question, alignment=Qt.AlignHCenter)
+main_layout.addWidget(RadioGroupBox)
+main_layout.addWidget(btn_next, stretch=2)
+
+window.setLayout(main_layout)
 
 
 
