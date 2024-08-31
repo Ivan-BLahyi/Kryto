@@ -5,11 +5,11 @@ app = QApplication([])
 
 from main_window import *
 
-win_card.resize(card_width,card_height)
-win_card.move(300, 300)
-win_card.setWindowTitle('Memory Card')
+window.resize(card_width,card_height)
+window.move(300, 300)
+window.setWindowTitle('Memory Card')
 
-win_card.show()
+window.show()
 app.exec_()
 
 
