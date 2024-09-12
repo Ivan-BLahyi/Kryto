@@ -2,19 +2,17 @@ from PyQt5.QtWidgets import (
     QWidget,
     QPushButton,
     QSpinBox,
+    QRadioButton,
     QGroupBox,
     QButtonGroup,
-    QRadioButton,
     QHBoxLayout,
     QVBoxLayout,
-    QLabel,
+    QLabel
 )
-
 from PyQt5.QtCore import Qt
 
 window = QWidget()
 width, height = 500, 600
-
 window.resize(width, height)
 window.move(300, 300)
 window.setWindowTitle("Memory Card")
@@ -26,7 +24,7 @@ box_minutes.setValue(30)
 btn_menu = QPushButton("Меню")
 btn_next = QPushButton("Відповісти")
 
-RadiGroupBox = QGroupBox("Варіанти відповідей")
+RadioGroupBox = QGroupBox("Варіанти відповідей")
 RadioGroup = QButtonGroup()
 
 rbtn_1 = QRadioButton("1")
@@ -40,8 +38,8 @@ RadioGroup.addButton(rbtn_3)
 RadioGroup.addButton(rbtn_4)
 
 layout_ans1 = QHBoxLayout()
-layout_ans2 = QHBoxLayout()
-layout_ans3 = QHBoxLayout()
+layout_ans2 = QVBoxLayout()
+layout_ans3 = QVBoxLayout()
 
 layout_ans2.addWidget(rbtn_1)
 layout_ans2.addWidget(rbtn_2)
@@ -50,7 +48,7 @@ layout_ans3.addWidget(rbtn_4)
 
 layout_ans1.addLayout(layout_ans2)
 layout_ans1.addLayout(layout_ans3)
-RadiGroupBox.setLayout(layout_ans1)
+RadioGroupBox.setLayout(layout_ans1)
 
 header = QHBoxLayout()
 header.addWidget(btn_menu, alignment=Qt.AlignLeft)
@@ -60,13 +58,9 @@ header.addWidget(box_minutes, alignment=Qt.AlignRight)
 question = QLabel("Питання???")
 
 main_layout = QVBoxLayout()
-main_layout.addWidget(header)
+main_layout.addLayout(header)
 main_layout.addWidget(question, alignment=Qt.AlignHCenter)
 main_layout.addWidget(RadioGroupBox)
 main_layout.addWidget(btn_next, stretch=2)
 
 window.setLayout(main_layout)
-
-
-
-
